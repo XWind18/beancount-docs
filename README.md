@@ -1,61 +1,63 @@
-# Beancount Documentation
+# 说明
+本项目fork自beancount doc，使用 ChatGPT-4o 进行翻译。
+# Beancount 文档
 
 https://beancount.github.io/docs/
 
-Source files are in [docs](docs/) directory.
+源文件位于[docs](docs/)目录中。
 
-These documents in markdown format are automatically generated from [official Beancount documentation](http://furius.ca/beancount/doc/index).
+这些 Markdown 格式的文档是从[官方 Beancount 文档](http://furius.ca/beancount/doc/index)自动生成的。
 
-You [can contribute](CONTRIBUTING.md).
+您[可以贡献](CONTRIBUTING.md)。
 
-## Beancount Google Doc converter
+## Beancount Google Doc 转换器
 
-### Installation
+### 安装
 
-The converter requires python 3.6 - 3.10.
+转换器需要 Python 3.6 - 3.10。
 
-Create virtualenv (recommended):
+建议创建 virtualenv：
 
-```
+```bash
 python3 -m venv venv
 . venv/bin/activate
 ```
 
-Install dependencies:
+安装依赖项：
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-### Usage
+### 使用
 
-Export and convert single document:
+导出并转换单个文档：
 
 ```shell
-# Export google document as docx file
+# 将 Google 文档导出为 docx 文件
 python export.py document "100tGcA4blh6KSXPRGCZpUlyxaRUwFHEvnz_k9DyZFn4" doubleentry.docx
-# Export drawings
+# 导出图表
 python export.py drawings "100tGcA4blh6KSXPRGCZpUlyxaRUwFHEvnz_k9DyZFn4" drawings
-# Convert docx file to markdown
+# 将 docx 文件转换为 markdown
 python export.py convert doubleentry.docx doubleentry.md --drawing-dir=drawings
 ```
 
-Export and convert all documents:
+导出并转换所有文档：
 
-```
+```bash
 python crawl.py
 ```
 
-## Documentation website
+## 文档网站
 
-Generate static website using [MkDocs](https://www.mkdocs.org/):
+使用[MkDocs](https://www.mkdocs.org/)生成静态网站：
 
-```
+```bash
 python build.py serve
 ```
 
-Deploy to GitHub pages:
+部署到 GitHub Pages：
 
-```
+```bash
 python build.py gh-deploy
 ```
